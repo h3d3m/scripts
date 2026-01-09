@@ -1,3 +1,4 @@
+# sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/h3d3m/scripts/refs/heads/main/bootstrap/ansible-setup.sh)"
 #!/usr/bin/env bash
 set -e
 
