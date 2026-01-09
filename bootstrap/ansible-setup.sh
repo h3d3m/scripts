@@ -1,5 +1,15 @@
-# sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/h3d3m/scripts/refs/heads/main/bootstrap/ansible-setup.sh)"
 #!/usr/bin/env bash
+# =============================================================================
+# Ansible Pull Bootstrap Script
+#
+# Bootstraps a fresh server for 'ansible-pull' architecture.
+# Automates setup of: dependencies, dedicated user, SSH keys, Vault pass,
+# and Systemd timer for periodic playbook execution (every 10 min).
+#
+# Usage: sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/h3d3m/scripts/refs/heads/main/bootstrap/ansible-setup.sh)"
+#
+# Supports: Debian/Ubuntu, RHEL/CentOS/Alma/Rocky.
+# =============================================================================
 set -e
 
 RED='\033[0;31m'
