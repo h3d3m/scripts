@@ -178,6 +178,9 @@ setup_systemd() {
 			fi
 		done
 
+		read -p "Enter git branch name (default: main): " GIT_BRANCH
+		GIT_BRANCH=${GIT_BRANCH:-main}
+
 		read -p "Enter playbook name (default: local.yml): " ANSIBLE_PLAYBOOK_NAME
 		ANSIBLE_PLAYBOOK_NAME=${ANSIBLE_PLAYBOOK_NAME:-local.yml}
 
@@ -197,7 +200,7 @@ Wants=network-online.target
 
 [Service]
 User=$ANSIBLE_USER
-ExecStart=/usr/bin/ansible-pull -U $REPO_URL -i localhost, $ansible_vault_arg $ANSIBLE_PLAYBOOK_NAME
+ExecStart=/usr/bin/ansible-pull -U $REPO_URL -C $GIT_BRANCH -i localhost, $ansible_vault_arg $ANSIBLE_PLAYBOOK_NAME
 TimeoutStopSec=600
 StandardOutput=journal
 StandardError=journal
