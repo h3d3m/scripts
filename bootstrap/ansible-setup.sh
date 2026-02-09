@@ -213,7 +213,7 @@ EOF
 		local systemd_timer_file="/etc/systemd/system/ansible-pull.timer"
 		cat > "$systemd_timer_file" <<EOF
 [Unit]
-Description=Run ansible-pull every 15 minutes
+Description=Run ansible-pull every 10 minutes
 
 [Timer]
 OnBootSec=5min
