@@ -298,7 +298,7 @@ main() {
 	log_info "Performing environment check..."
 	check_environment
 
-	echo -e "${GREEN}Done"
+	echo -e "${GREEN}Done${NC}"
 }
 
 main
